@@ -11,6 +11,8 @@ var countdown   = new Countdown();
 global.instance      = this;
 var animationRunning = false;  // Process / Suspend ticks
 var setDisplay       = function(){};
+const ANIM_STEP      = 260;
+const ANIM_EASE      = "easeInOutQuad";
 
 /*[ Helper: Avoid jQuery ]*******************************************
 * Searches the HTML for a class or id
@@ -27,22 +29,15 @@ function $(search){
  */
 function updateTime() {
     var time = new Date();
-    var amt  = "am";
     var hrs  = time.getHours().toString();
     var min  = time.getMinutes().toString();
     var sec  = time.getSeconds().toString();
-    var ndx  = time.getSeconds() % 2;
 
-    if (time.getHours() > 12) {
-        amt = "pm";
-        hrs = (time.getHours()-12).toString();
-    }
-
-    if (hrs == "0") hrs = "12";
     if (min.length == 1) min = '0' + min;
     if (sec.length == 1) sec = '0' + sec;
+    if (hrs.length == 1) hrs = '0' + hrs;
     
-    return `${hrs}<span class="accent${ndx}">:</span>${min}<span class="accent${ndx}">.</span>${sec} <span class="${amt}">${amt}</span>`;
+    return `${hrs}<span class="time-sep">:</span>${min}<span class="time-sep">:</span>${sec}`;
 }
 
 /*[ Transition: Promises ]*******************************************
@@ -57,11 +52,12 @@ function transition(op, delay=0) {
 
     return new Promise(function(resolve) {
         ele.velocity({opacity: set}, {
-            duration: 250,
+            duration: ANIM_STEP,
+            easing: ANIM_EASE,
             complete: function() { 
                 setTimeout(function() {
                     resolve(ele); 
-                }, 250 + delay);
+                }, ANIM_STEP + delay);
             }
         });
     });
@@ -104,25 +100,26 @@ function changeMode() {
 
     // Animations & Change the mode
     var hideFooter = new Once(function() {
-        mainContent.velocity({lineHeight: ["120px", "90px"]}, {duration:250});
-        footer.velocity({top: ["120px", "90px"]}, {delay:250, duration:250});
-        footerContent.velocity({left: ["-340px", "0px"]}, {duration:250, complete: function() { modes.next(); }});
+        mainContent.velocity({lineHeight: ["120px", "90px"]}, {duration: ANIM_STEP, easing: ANIM_EASE});
+        footer.velocity({top: ["120px", "90px"]}, {delay: ANIM_STEP, duration: ANIM_STEP, easing: ANIM_EASE});
+        footerContent.velocity({left: ["-340px", "0px"]}, {duration: ANIM_STEP, easing: ANIM_EASE, complete: function() { modes.next(); }});
     });
 
     var showFooter = new Once(function() {
         modes.next();
-        mainContent.velocity({lineHeight: ["90px", "120px"]}, {duration:250});
-        footer.velocity({top: ["90px", "120px"]}, {delay:250, duration:250});
-        footerContent.velocity({left: ["0px", "-340px"]}, {delay:250, duration:250});
+        mainContent.velocity({lineHeight: ["90px", "120px"]}, {duration: ANIM_STEP, easing: ANIM_EASE});
+        footer.velocity({top: ["90px", "120px"]}, {delay: ANIM_STEP, duration: ANIM_STEP, easing: ANIM_EASE});
+        footerContent.velocity({left: ["0px", "-340px"]}, {delay: ANIM_STEP, duration: ANIM_STEP, easing: ANIM_EASE});
     });
 
     var changeFooter = new Once(function() {
         footerContent.velocity({left: ["340px", "0px"]}, { 
-            delay:250, 
-            duration:250, 
+            delay: ANIM_STEP, 
+            duration: ANIM_STEP, 
+            easing: ANIM_EASE,
             complete: function() { 
                 modes.next(); 
-                footerContent.velocity({left: ["0px", "340px"]}, { delay:250, duration:250 });
+                footerContent.velocity({left: ["0px", "340px"]}, { delay: ANIM_STEP, duration: ANIM_STEP, easing: ANIM_EASE });
             }
         });
     });

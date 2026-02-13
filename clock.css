@@ -1,45 +1,51 @@
 :root {
     color-scheme: dark;
-    --bg-start: rgb(11, 36, 46);
-    --bg-end: rgb(5, 11, 19);
-    --text-primary: #f2f6f9;
-    --text-muted: #9aa3ad;
-    --text-shadow: rgba(0, 0, 0, 0.6);
-    --footer-bg: #242424;
-    --accent: rgb(36, 238, 252);
-    --am: #f5ff6c;
-    --pm: #4f80da;
-    --mode: #ffd166;
-    --yellow: #ffd166;
+    --bg-start: #2a2f3a;
+    --bg-end: #0f1116;
+    --text-primary: #f5f7fb;
+    --text-muted: #a0a7b1;
+    --text-shadow: rgba(0, 0, 0, 0.3);
+    --footer-bg: rgba(26, 29, 36, 0.88);
+    --divider: rgba(255, 255, 255, 0.08);
+    --accent: #64d2ff;
+    --am: #ffd60a;
+    --pm: #5e5ce6;
+    --mode: #ff9f0a;
+    --yellow: #ff9f0a;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         color-scheme: light;
-        --bg-start: #f5f7fb;
-        --bg-end: #e8eef5;
-        --text-primary: #1b232d;
-        --text-muted: #6c7682;
-        --text-shadow: rgba(0, 0, 0, 0.15);
-        --footer-bg: #e3e7ee;
-        --accent: #0aa3b5;
-        --am: #b37b00;
-        --pm: #2a5bd7;
-        --mode: #a97700;
-        --yellow: #a97700;
+        --bg-start: #f7f8fb;
+        --bg-end: #e6e9f0;
+        --text-primary: #12161d;
+        --text-muted: #66707d;
+        --text-shadow: rgba(0, 0, 0, 0.12);
+        --footer-bg: rgba(235, 238, 244, 0.92);
+        --divider: rgba(0, 0, 0, 0.08);
+        --accent: #007aff;
+        --am: #b98900;
+        --pm: #3f51e6;
+        --mode: #b06600;
+        --yellow: #b06600;
     }
 }
 
 html, body {
     -webkit-user-select: none;
     background-color: var(--bg-end);
-    background: radial-gradient(ellipse at center, var(--bg-start) 0%, var(--bg-end) 100%);
-    background: -webkit-radial-gradient(center, ellipse cover, var(--bg-start) 0%, var(--bg-end) 100%); /* Chrome10-25,Safari5.1-6 */
-    font-family: belgrano;
+    background:
+        radial-gradient(120% 140% at 50% -20%, rgba(255, 255, 255, 0.08), transparent 60%),
+        radial-gradient(120% 120% at 50% 10%, var(--bg-start) 0%, var(--bg-end) 70%);
+    font-family: "SF Pro Display", "SF Pro Text", "SF Pro Rounded", "Helvetica Neue", sans-serif;
     height:100%;
     margin:0;
     max-height: 120px;
     overflow:hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 280ms ease, color 280ms ease;
 }
 
 body {
@@ -49,6 +55,7 @@ body {
 #clockContent {
     display: inline-block;
     max-width: 100%;
+    font-variant-numeric: tabular-nums;
 }
 
 .accent0 {
@@ -57,6 +64,10 @@ body {
 
 .accent1 {
     color: transparent;
+}
+
+.time-sep {
+    color: #000000;
 }
 
 .am {
@@ -107,10 +118,12 @@ body {
     position: absolute;
     text-align: center;
     width:  100%;
-    font-size: 50px; 
+    font-size: 52px; 
+    font-weight: 500;
+    letter-spacing: 0.5px;
     left: 0px;
     line-height: 120px;
-    text-shadow: 2px 2px var(--text-shadow);
+    text-shadow: 0 1px 2px var(--text-shadow);
     top: 0px;
     vertical-align: middle;
 }
@@ -121,12 +134,16 @@ body {
     position: absolute;
     text-align: center;
     width:  100%;
-    font-size: 15px; 
+    font-size: 13px; 
+    font-weight: 500;
+    letter-spacing: 0.3px;
     background-color: var(--footer-bg);
+    border-top: 1px solid var(--divider);
     left: 0px;
     height: 30px;
     top: 120px;
     vertical-align: bottom;
+    transition: background-color 280ms ease, border-color 280ms ease;
 }
 
 .footer-content {
@@ -135,7 +152,9 @@ body {
     position: relative;
     text-align: center;
     width:  100%;
-    font-size: 15px; 
+    font-size: 13px; 
+    font-weight: 500;
+    letter-spacing: 0.3px;
     background-color: var(--footer-bg);
     top:0px;
     left: -340px;
