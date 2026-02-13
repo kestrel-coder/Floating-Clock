@@ -70,7 +70,7 @@ class Countdown {
     // -- Turns on kbEvents and changes the display
     initSettings() {
         if (this.countdown.enabled == false) {
-            var mainContent   = $('#mainContent');
+            var clockContent  = $('#clockContent');
             var footerContent = $('#footerContent');
         
             // Init key handler
@@ -85,7 +85,7 @@ class Countdown {
             // Override the display
             var me = this;
             instance.setDisplay = function() {
-                mainContent.innerHTML   = me.displayDialog();
+                clockContent.innerHTML  = me.displayDialog();
                 footerContent.innerHTML = instance.modes.display()();
             }
         }
@@ -166,8 +166,11 @@ class Countdown {
     }
 
     reset() { 
+        var clockContent  = $('#clockContent');
+        var footerContent = $('#footerContent');
+
         instance.setDisplay = function() {
-            mainContent.innerHTML   = instance.updateTime();
+            clockContent.innerHTML  = instance.updateTime();
             footerContent.innerHTML = instance.modes.display()();
         }
      

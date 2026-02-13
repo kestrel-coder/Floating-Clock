@@ -1,7 +1,40 @@
+:root {
+    color-scheme: dark;
+    --bg-start: rgb(11, 36, 46);
+    --bg-end: rgb(5, 11, 19);
+    --text-primary: #f2f6f9;
+    --text-muted: #9aa3ad;
+    --text-shadow: rgba(0, 0, 0, 0.6);
+    --footer-bg: #242424;
+    --accent: rgb(36, 238, 252);
+    --am: #f5ff6c;
+    --pm: #4f80da;
+    --mode: #ffd166;
+    --yellow: #ffd166;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color-scheme: light;
+        --bg-start: #f5f7fb;
+        --bg-end: #e8eef5;
+        --text-primary: #1b232d;
+        --text-muted: #6c7682;
+        --text-shadow: rgba(0, 0, 0, 0.15);
+        --footer-bg: #e3e7ee;
+        --accent: #0aa3b5;
+        --am: #b37b00;
+        --pm: #2a5bd7;
+        --mode: #a97700;
+        --yellow: #a97700;
+    }
+}
+
 html, body {
     -webkit-user-select: none;
-    background-color: rgb(5, 11, 19);
-    background: -webkit-radial-gradient(center, ellipse cover, rgb(11, 36, 46) 0%,rgb(5, 11, 19) 100%); /* Chrome10-25,Safari5.1-6 */
+    background-color: var(--bg-end);
+    background: radial-gradient(ellipse at center, var(--bg-start) 0%, var(--bg-end) 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, var(--bg-start) 0%, var(--bg-end) 100%); /* Chrome10-25,Safari5.1-6 */
     font-family: belgrano;
     height:100%;
     margin:0;
@@ -9,35 +42,50 @@ html, body {
     overflow:hidden;
 }
 
+#mainContent {
+    -webkit-app-region: drag;
+}
+
+#clockContent {
+    -webkit-app-region: no-drag;
+    display: inline-block;
+    max-width: 100%;
+}
+
+#footer,
+#footerContent {
+    -webkit-app-region: no-drag;
+}
+
 .accent0 {
-    color: rgba(36, 238, 252, 1);
+    color: var(--accent);
 }
 
 .accent1 {
-    color: rgba(36, 238, 252, 0);
+    color: transparent;
 }
 
 .am {
-    color: #f5ff6c;
+    color: var(--am);
     font-size: 40px; 
 }
 
 .pm {
-    color: #4f80da;
+    color: var(--pm);
     font-size: 40px; 
 }
 
 .modes {
-    color: yellow;
+    color: var(--mode);
     font-size: 40px; 
 }
 
 .yellow {
-    color: yellow;
+    color: var(--yellow);
 }
 
 .gray {
-    color: rgb(131, 131, 131);
+    color: var(--text-muted);
 }
 
 .dialog {
@@ -45,7 +93,7 @@ html, body {
     text-align: center;
     line-height: 20px;
     padding: 15px;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px var(--text-shadow);
     vertical-align: middle;
 }
 
@@ -54,13 +102,13 @@ html, body {
     margin-top:15px;
     margin-right:20px;
     margin-left:20px;
-    color: yellow;
+    color: var(--yellow);
     padding-bottom: 1px;
 }
 
 
 .floating-box {
-    color: white;
+    color: var(--text-primary);
     cursor: pointer;
     position: absolute;
     text-align: center;
@@ -68,19 +116,19 @@ html, body {
     font-size: 50px; 
     left: 0px;
     line-height: 120px;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px var(--text-shadow);
     top: 0px;
     vertical-align: middle;
 }
 
 .floating-footer-box {
-    color: white;
+    color: var(--text-primary);
     cursor: pointer;
     position: absolute;
     text-align: center;
     width:  100%;
     font-size: 15px; 
-    background-color: #242424;
+    background-color: var(--footer-bg);
     left: 0px;
     height: 30px;
     top: 120px;
@@ -88,13 +136,13 @@ html, body {
 }
 
 .footer-content {
-    color: white;
+    color: var(--text-primary);
     cursor: pointer;
     position: relative;
     text-align: center;
     width:  100%;
     font-size: 15px; 
-    background-color: #242424;
+    background-color: var(--footer-bg);
     top:0px;
     left: -340px;
     height: 30px;

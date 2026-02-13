@@ -13,6 +13,7 @@ var winOpts = {
     height: 120, 
     alwaysOnTop: true, 
     icon: path.join(__dirname, "sound", 'clock.png'),
+    titleBarStyle: 'hiddenInset',
     webPreferences: {
         nodeIntegration: true,
         contextIsolation: false

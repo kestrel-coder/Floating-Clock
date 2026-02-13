@@ -45,20 +45,6 @@ function updateTime() {
     return `${hrs}<span class="accent${ndx}">:</span>${min}<span class="accent${ndx}">.</span>${sec} <span class="${amt}">${amt}</span>`;
 }
 
-/*[ HTML: Date ]*****************************************************
-* Returns an HTML string with the current date
-* @return {String}
- */
-function updateDate() {
-    var date = new Date();
-    var mth  = (date.getMonth()+1).toString();
-    var day  = date.getDate().toString();
-    var yer  = date.getFullYear().toString();
-    var ndx  = date.getSeconds() % 2;
-
-    return `${mth}<span class="accent${ndx}">-</span>${day}<span class="accent${ndx}">-</span>${yer}`;
-}
-
 /*[ Transition: Promises ]*******************************************
 * Transition an objects opacity
 * @param  {Number} op The opacity you want to transition to
@@ -112,6 +98,7 @@ function mainTransition(fn) {
 */
 function changeMode() {
     var mainContent   = $('#mainContent');
+    var clockContent  = $('#clockContent');
     var footer        = $('#footer');
     var footerContent = $('#footerContent');
 
@@ -151,7 +138,7 @@ function changeMode() {
     // Execute 
     mainTransition(function() {
         once.exec();
-        mainContent.innerHTML = `<span class="modes">${modes.name(index)}</span>`;
+        clockContent.innerHTML = `<span class="modes">${modes.name(index)}</span>`;
         footerContent.innerHTML = modes.display()();
     });
 }
@@ -160,6 +147,7 @@ function changeMode() {
 
 document.addEventListener('DOMContentLoaded', function() {
     var mainContent   = $('#mainContent');
+    var clockContent  = $('#clockContent');
     var footer        = $('#footer');
     var footerContent = $('#footerContent');
 
@@ -180,21 +168,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Display function, What to display on-screen
     setDisplay = function() {
-        mainContent.innerHTML   = updateTime();
+        clockContent.innerHTML  = updateTime();
         footerContent.innerHTML = modes.display()();
     }
 
-    // Listener : Update the date
-    mainContent.addEventListener("click", function(){ 
-        if (!animationRunning)
-            mainTransition(function() {
-                mainContent.innerHTML   = updateDate();
-                footerContent.innerHTML = modes.display()();
-            });
-    });
-
     // Listener : Change the Display Mode
-    mainContent.addEventListener("contextmenu", function(ev){
+    clockContent.addEventListener("contextmenu", function(ev){
         ev.preventDefault(); 
         if (!animationRunning)
             changeMode();
