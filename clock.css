@@ -42,19 +42,13 @@ html, body {
     overflow:hidden;
 }
 
-#mainContent {
+body {
     -webkit-app-region: drag;
 }
 
 #clockContent {
-    -webkit-app-region: no-drag;
     display: inline-block;
     max-width: 100%;
-}
-
-#footer,
-#footerContent {
-    -webkit-app-region: no-drag;
 }
 
 .accent0 {
