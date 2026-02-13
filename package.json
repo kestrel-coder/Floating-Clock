@@ -1,10 +1,11 @@
+
 {
   "name": "floating-clock",
   "version": "1.0.0",
   "description": "Clock for your Desktop",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/electron/dist/electron .",
+    "start": "node_modules/electron/dist/Electron.app/Contents/MacOS/Electron .",
     "build": "rm clock.json;electron-packager . clock --out dist --icon=clock.png --overwrite --platform=linux --arch=x64 --app-version=1.0.0",
     "build-all": "rm clock.json;electron-packager . clock --out dist --icon=clock.png --overwrite --platform=linux,darwin,win32 --arch=x64 --app-version=1.0.0"
   },

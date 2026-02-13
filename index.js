@@ -43,6 +43,8 @@ function updateWinPos(sender) {
 
 function createWindow () {
     win = new BrowserWindow(winOpts);
+    win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
+    win.setAlwaysOnTop(true, 'screen-saver');
     win.setMenu(null);
     win.loadFile('index.html')
     
@@ -57,7 +59,7 @@ function createWindow () {
     
     setInterval(function() {
         if (win) {
-            win.setAlwaysOnTop(true);
+            win.setAlwaysOnTop(true, 'screen-saver');
             updateWinPos(win);
         }
     }, 1);
