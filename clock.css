@@ -58,6 +58,16 @@ body {
     font-variant-numeric: tabular-nums;
 }
 
+.time-value {
+    font-family: "Roboto Flex", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 760;
+    font-optical-sizing: auto;
+    font-variant-numeric: tabular-nums lining-nums;
+    font-feature-settings: "tnum" 1, "lnum" 1;
+    font-variation-settings: "wght" 760, "wdth" 95;
+    letter-spacing: 0.015em;
+}
+
 .accent0 {
     color: var(--accent);
 }
@@ -67,7 +77,13 @@ body {
 }
 
 .time-sep {
-    color: #000000;
+    color: inherit;
+    font-family: "Roboto Flex", "Roboto", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 760;
+    font-optical-sizing: auto;
+    font-variation-settings: "wght" 760, "wdth" 95;
+    letter-spacing: 0;
+    margin: 0 0.06em;
 }
 
 .am {
@@ -118,9 +134,9 @@ body {
     position: absolute;
     text-align: center;
     width:  100%;
-    font-size: 52px; 
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    font-size: 62px; 
+    font-weight: 760;
+    letter-spacing: 0;
     left: 0px;
     line-height: 120px;
     text-shadow: 0 1px 2px var(--text-shadow);

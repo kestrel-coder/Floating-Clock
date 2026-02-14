@@ -37,7 +37,7 @@ function updateTime() {
     if (sec.length == 1) sec = '0' + sec;
     if (hrs.length == 1) hrs = '0' + hrs;
     
-    return `${hrs}<span class="time-sep">:</span>${min}<span class="time-sep">:</span>${sec}`;
+    return `<span class="time-value">${hrs}</span><span class="time-sep">:</span><span class="time-value">${min}</span><span class="time-sep">:</span><span class="time-value">${sec}</span>`;
 }
 
 /*[ Transition: Promises ]*******************************************
