@@ -20,6 +20,12 @@ var winOpts = {
     }
 }
 
+const baseContentSize = {
+    width: winOpts.width,
+    height: winOpts.height
+};
+const baseAspectRatio = baseContentSize.width / baseContentSize.height;
+
 if (!isDebug) {
     winOpts['resizable'] = true;
 } else {
@@ -42,12 +48,32 @@ function updateWinPos(sender) {
     opts["y"] = sender.getPosition()[1]-25;
 }
 
+function updateWindowScale(sender) {
+    if (!sender || sender.isDestroyed()) return;
+
+    const [width, height] = sender.getContentSize();
+    if (width <= 0 || height <= 0) return;
+
+    const widthScale = width / baseContentSize.width;
+    const heightScale = height / baseContentSize.height;
+    const zoomFactor = Math.max(0.4, Math.min(widthScale, heightScale));
+
+    sender.webContents.setZoomFactor(zoomFactor);
+}
+
 function createWindow () {
     win = new BrowserWindow(winOpts);
     win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
     win.setAlwaysOnTop(true, 'screen-saver');
     win.setMenu(null);
+    win.setAspectRatio(baseAspectRatio);
     win.loadFile('index.html')
+    win.webContents.on('did-finish-load', function() {
+        updateWindowScale(win);
+    });
+    win.on('resize', function() {
+        updateWindowScale(win);
+    });
     
     if (isDebug) {
         win.webContents.openDevTools()
