@@ -21,7 +21,7 @@ var winOpts = {
 }
 
 if (!isDebug) {
-    winOpts['resizable'] = false;
+    winOpts['resizable'] = true;
 } else {
     winOpts['height'] = 400; 
 
