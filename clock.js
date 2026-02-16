@@ -1,4 +1,5 @@
 const path        = require('path');
+const { ipcRenderer } = require('electron');
 const {Modes}     = require(path.join(__dirname, 'modes.js'));
 const {Once}      = require(path.join(__dirname, 'once.js'));
 const {Stopwatch} = require(path.join(__dirname, 'stopwatch.js'));
@@ -21,6 +22,16 @@ const ANIM_EASE      = "easeInOutQuad";
  */
 function $(search){
     return document.querySelector(search);
+}
+
+function applyThemeOverride(mode) {
+    const root = document.documentElement;
+
+    if (mode === 'dark' || mode === 'light') {
+        root.setAttribute('data-theme-override', mode);
+    } else {
+        root.removeAttribute('data-theme-override');
+    }
 }
 
 /*[ HTML: Time ]*****************************************************
@@ -181,6 +192,10 @@ document.addEventListener('DOMContentLoaded', function() {
         ev.preventDefault();
         if (!animationRunning)
             modes.click()(ev); 
+    });
+
+    ipcRenderer.on('theme-override', function(_event, mode) {
+        applyThemeOverride(mode);
     });
 
     // Update the display every ms
