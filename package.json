@@ -1,6 +1,7 @@
 
 {
   "name": "floating-clock",
+  "productName": "SmartClock",
   "version": "1.0.0",
   "description": "Clock for your Desktop",
   "main": "index.js",

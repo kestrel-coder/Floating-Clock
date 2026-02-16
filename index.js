@@ -40,6 +40,7 @@ let themeSyncInterval = null;
 let themeSyncInProgress = false;
 let nativeThemeListener = null;
 let lastAppliedThemeMode = null;
+let keepOnTopInterval = null;
 
 var winOpts = { 
     width: 340, 
@@ -201,6 +202,23 @@ function stopThemeSync() {
     lastAppliedThemeMode = null;
 }
 
+function stopKeepOnTopSync() {
+    if (keepOnTopInterval) {
+        clearInterval(keepOnTopInterval);
+        keepOnTopInterval = null;
+    }
+}
+
+function startKeepOnTopSync(sender) {
+    stopKeepOnTopSync();
+
+    keepOnTopInterval = setInterval(function() {
+        if (!sender || sender.isDestroyed()) return;
+        sender.setAlwaysOnTop(true, 'screen-saver');
+        updateWinPos(sender);
+    }, 250);
+}
+
 function startThemeSync(sender) {
     stopThemeSync();
 
@@ -225,6 +243,7 @@ function createWindow () {
     win.webContents.on('did-finish-load', function() {
         updateWindowScale(win);
         startThemeSync(win);
+        startKeepOnTopSync(win);
     });
     win.on('resize', function() {
         updateWindowScale(win);
@@ -238,17 +257,11 @@ function createWindow () {
     }
 
     win.on('closed', () => {
+        stopKeepOnTopSync();
         stopThemeSync();
         fs.writeFileSync(cfg_file, JSON.stringify(opts));
         win = null
     })
-    
-    setInterval(function() {
-        if (win) {
-            win.setAlwaysOnTop(true, 'screen-saver');
-            updateWinPos(win);
-        }
-    }, 1);
 }
 
 app.on('ready', createWindow)
