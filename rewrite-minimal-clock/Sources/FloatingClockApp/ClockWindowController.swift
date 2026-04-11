@@ -159,6 +159,17 @@ final class ClockWindowController: NSWindowController, NSWindowDelegate {
     func windowWillClose(_ notification: Notification) {
         themeController?.stop()
     }
+
+    func showAndActivate() {
+        showWindow(self)
+        window?.makeKeyAndOrderFront(self)
+        NSApp.activate(ignoringOtherApps: true)
+        themeController?.requestRefresh()
+    }
+
+    func requestThemeRefresh() {
+        themeController?.requestRefresh()
+    }
 }
 
 private final class ChromeHoverView: NSView {

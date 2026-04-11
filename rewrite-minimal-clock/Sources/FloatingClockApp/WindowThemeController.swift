@@ -9,6 +9,7 @@ final class WindowThemeController: NSObject {
     private var timer: Timer?
     private var lastMode: ClockThemeMode?
     private var hasRequestedCaptureAccess = false
+    private var hasPresentedPermissionHelp = false
 
     private let samplingInterval: TimeInterval = 2.5
     private let darkThreshold: CGFloat = 0.52
@@ -95,8 +96,41 @@ final class WindowThemeController: NSObject {
         hasRequestedCaptureAccess = true
 
         let granted = CGRequestScreenCaptureAccess()
-        guard granted else { return }
-        requestRefresh()
+        if granted {
+            requestRefresh()
+        } else {
+            presentPermissionHelpIfNeeded()
+        }
+    }
+
+    private func presentPermissionHelpIfNeeded() {
+        guard !hasPresentedPermissionHelp else { return }
+        hasPresentedPermissionHelp = true
+
+        let alert = NSAlert()
+        alert.alertStyle = .informational
+        alert.messageText = "Allow Screen Recording for automatic theme matching"
+        alert.informativeText = "FloatingClockMac needs Screen Recording permission to detect whether the content behind the clock is light or dark. Without it, the app can only follow the system appearance. After enabling the permission, reopen the app or use Refresh Theme from the menu bar icon."
+        alert.addButton(withTitle: "Open System Settings")
+        alert.addButton(withTitle: "Not Now")
+
+        let response = alert.runModal()
+        if response == .alertFirstButtonReturn {
+            Self.openScreenRecordingSettings()
+        }
+    }
+
+    static func openScreenRecordingSettings() {
+        let workspace = NSWorkspace.shared
+
+        if let deepLink = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture"),
+           workspace.open(deepLink) {
+            return
+        }
+
+        if let fallback = URL(string: "x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension") {
+            _ = workspace.open(fallback)
+        }
     }
 
     private func sampleRect(for window: NSWindow) -> CGRect {

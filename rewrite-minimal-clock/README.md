@@ -9,6 +9,7 @@ It is designed to stay visible without feeling intrusive:
 - Native macOS app built with `Swift`, `AppKit`, and `SwiftUI`
 - Always on top
 - Visible across Spaces and in full-screen apps
+- Menu bar utility with a quick-access status icon
 - Resizable and draggable
 - Centered `HH:MM:SS` clock with `24-hour` format
 - Automatic theme adaptation with screen-sampling fallback to system appearance
@@ -30,12 +31,14 @@ Notes:
 - The distributed app is outside the App Store.
 - If macOS blocks the first launch, right-click the app and choose `Open`.
 - To let automatic light/dark switching react to the content behind the clock, allow `Screen Recording` access when macOS asks.
+- After enabling `Screen Recording`, reopen the app or use `Refresh Theme` from the menu bar icon.
 
 ## Usage
 
 - Drag the clock to move it.
 - Resize the window from the edges or corners.
 - The clock stays centered as the window changes size.
+- Use the menu bar icon to show the clock again, refresh theme detection, open Screen Recording settings, or quit the app.
 - On the first packaged launch, the app attempts to register itself for launch at login.
 - If you later want to disable startup behavior, remove `FloatingClockMac` from `System Settings > General > Login Items`.
 

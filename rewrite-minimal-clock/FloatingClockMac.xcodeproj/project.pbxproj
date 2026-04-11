@@ -14,11 +14,13 @@
 		75AF7D162B134C4938EBB079 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9088F62FC594AB050ED90F9 /* main.swift */; };
 		86304EF63390E79FBE097071 /* LaunchAtLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3667F5341B835F180ADC37F /* LaunchAtLoginController.swift */; };
 		DDA7238688E691BB655E18A8 /* WindowThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC849F465CE7867C954BAA92 /* WindowThemeController.swift */; };
+		F123A89E58918C2DAE7209A0 /* StatusItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72DE0BF8A522F6142627C8D4 /* StatusItemController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2AAE2BB88042775FAEEC1924 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		2B4F9ECE30C8F7F855050D18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72DE0BF8A522F6142627C8D4 /* StatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusItemController.swift; sourceTree = "<group>"; };
 		79025BBC75455E386FFFF342 /* ClockWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockWindowController.swift; sourceTree = "<group>"; };
 		C9088F62FC594AB050ED90F9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DB4732D12161EDA8B63F474D /* FloatingClockMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingClockMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 				79025BBC75455E386FFFF342 /* ClockWindowController.swift */,
 				F3667F5341B835F180ADC37F /* LaunchAtLoginController.swift */,
 				C9088F62FC594AB050ED90F9 /* main.swift */,
+				72DE0BF8A522F6142627C8D4 /* StatusItemController.swift */,
 				EC849F465CE7867C954BAA92 /* WindowThemeController.swift */,
 			);
 			path = FloatingClockApp;
@@ -145,6 +148,7 @@
 				16CAEEBC6C109D820A5C8ED2 /* ClockView.swift in Sources */,
 				229D3E913398E725BCDAAED5 /* ClockWindowController.swift in Sources */,
 				86304EF63390E79FBE097071 /* LaunchAtLoginController.swift in Sources */,
+				F123A89E58918C2DAE7209A0 /* StatusItemController.swift in Sources */,
 				DDA7238688E691BB655E18A8 /* WindowThemeController.swift in Sources */,
 				75AF7D162B134C4938EBB079 /* main.swift in Sources */,
 			);

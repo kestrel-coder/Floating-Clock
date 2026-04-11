@@ -1,6 +1,7 @@
 .build/
 .xcode-derived/
 .xcode-derived-release/
+.xcode-derived-release-universal/
 .DS_Store
 release/
 node_modules/
