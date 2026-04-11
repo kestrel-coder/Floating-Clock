@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C7A7BB6C5F771559326ED62 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = EC555F8E9F860ADF0F85B2B3 /* Resources */; };
+		062C5E353DF49B3250AC182A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4F9ECE30C8F7F855050D18 /* Assets.xcassets */; };
 		16CAEEBC6C109D820A5C8ED2 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE2BB88042775FAEEC1924 /* ClockView.swift */; };
 		21E5E4356FE80839F84DCE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F753FC08314FA562D628940B /* AppDelegate.swift */; };
 		229D3E913398E725BCDAAED5 /* ClockWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79025BBC75455E386FFFF342 /* ClockWindowController.swift */; };
@@ -18,16 +18,24 @@
 
 /* Begin PBXFileReference section */
 		2AAE2BB88042775FAEEC1924 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		2B4F9ECE30C8F7F855050D18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79025BBC75455E386FFFF342 /* ClockWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockWindowController.swift; sourceTree = "<group>"; };
 		C9088F62FC594AB050ED90F9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DB4732D12161EDA8B63F474D /* FloatingClockMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingClockMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC555F8E9F860ADF0F85B2B3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = SOURCE_ROOT; };
 		EC849F465CE7867C954BAA92 /* WindowThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowThemeController.swift; sourceTree = "<group>"; };
 		F3667F5341B835F180ADC37F /* LaunchAtLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginController.swift; sourceTree = "<group>"; };
 		F753FC08314FA562D628940B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		097DF60CF823D6BE736FCE10 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2B4F9ECE30C8F7F855050D18 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		69D0B38113EEAF864A7DE9EA /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -39,8 +47,8 @@
 		94810C28416D49B8F5ABC8BB = {
 			isa = PBXGroup;
 			children = (
+				097DF60CF823D6BE736FCE10 /* Resources */,
 				D33487147777ACAE51559C34 /* Sources */,
-				EC555F8E9F860ADF0F85B2B3 /* Resources */,
 				69D0B38113EEAF864A7DE9EA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,7 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C7A7BB6C5F771559326ED62 /* Resources in Resources */,
+				062C5E353DF49B3250AC182A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

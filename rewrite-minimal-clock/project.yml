@@ -27,7 +27,7 @@ targets:
     sources:
       - path: Sources/FloatingClockApp
       - path: Resources
-        type: folder
+        buildPhase: resources
     settings:
       base:
         PRODUCT_MODULE_NAME: FloatingClockMac
