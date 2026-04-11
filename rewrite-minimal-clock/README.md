@@ -1,16 +1,24 @@
-# Minimal Clock Rewrite Workspace
+# FloatingClockMac Workspace
 
-This directory is the isolated workspace for the next version of Floating Clock.
+This directory is the isolated workspace for the native macOS rewrite of Floating Clock, currently developed under the app name `FloatingClockMac`.
 
 Rules for this rewrite:
 
 - Leave the existing Electron implementation in the repository root unchanged.
-- Build a new, lightweight app here instead of modifying the legacy codebase.
-- Keep scope minimal: floating time display only unless requirements change later.
-- Do not commit to a framework or runtime yet; choose the stack after requirements are finalized.
+- Build the new app here instead of modifying the legacy codebase.
+- Keep the feature set focused on the floating clock experience only.
+- Keep local planning documents out of GitHub.
 
 Current status:
 
-- Workspace created.
-- No implementation started yet.
-- Next step is to define product constraints and pick the runtime/toolchain.
+- Product requirements documented locally in `REQUIREMENTS.md`.
+- Technical decisions documented locally in `TECH-DECISIONS.md`.
+- Execution steps documented locally in `IMPLEMENTATION-PLAN.md`.
+- Native stack chosen: `Swift + AppKit`, with `SwiftUI` for the clock view.
+- A runnable macOS app scaffold exists with a translucent floating window and centered `HH:MM:SS` clock.
+- The app currently supports always-on-top behavior, Spaces/full-screen presence, resizing, dragging, and frame autosave.
+- Automatic theme sampling is wired in with a system-appearance fallback.
+
+Next step:
+
+- Continue polishing the titlebar/chrome behavior and then implement login item support.

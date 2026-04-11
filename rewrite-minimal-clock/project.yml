@@ -1,0 +1,32 @@
+name: FloatingClockMac
+
+options:
+  minimumXcodeGenVersion: 2.45.0
+  developmentLanguage: en
+  groupSortPosition: top
+  createIntermediateGroups: true
+
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.kestrelcoder.FloatingClockMac
+    PRODUCT_NAME: FloatingClockMac
+    MACOSX_DEPLOYMENT_TARGET: 13.0
+    GENERATE_INFOPLIST_FILE: YES
+    INFOPLIST_KEY_CFBundleDisplayName: FloatingClockMac
+    INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
+    INFOPLIST_KEY_LSUIElement: YES
+    INFOPLIST_KEY_NSHumanReadableCopyright: Copyright © 2026 kestrel-coder
+    SWIFT_EMIT_LOC_STRINGS: NO
+
+targets:
+  FloatingClockMac:
+    type: application
+    platform: macOS
+    deploymentTarget: "13.0"
+    sources:
+      - path: Sources/FloatingClockApp
+    settings:
+      base:
+        PRODUCT_MODULE_NAME: FloatingClockMac
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGNING_REQUIRED: NO
