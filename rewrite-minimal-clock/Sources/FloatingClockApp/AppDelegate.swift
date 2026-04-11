@@ -4,6 +4,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     private var windowController: ClockWindowController?
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        LaunchAtLoginController.shared.configureIfNeeded()
+
         let controller = ClockWindowController()
         controller.showWindow(self)
         controller.window?.orderFrontRegardless()

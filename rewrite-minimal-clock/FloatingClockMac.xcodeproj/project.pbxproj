@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C7A7BB6C5F771559326ED62 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = EC555F8E9F860ADF0F85B2B3 /* Resources */; };
 		16CAEEBC6C109D820A5C8ED2 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE2BB88042775FAEEC1924 /* ClockView.swift */; };
 		21E5E4356FE80839F84DCE80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F753FC08314FA562D628940B /* AppDelegate.swift */; };
 		229D3E913398E725BCDAAED5 /* ClockWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79025BBC75455E386FFFF342 /* ClockWindowController.swift */; };
 		75AF7D162B134C4938EBB079 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9088F62FC594AB050ED90F9 /* main.swift */; };
+		86304EF63390E79FBE097071 /* LaunchAtLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3667F5341B835F180ADC37F /* LaunchAtLoginController.swift */; };
 		DDA7238688E691BB655E18A8 /* WindowThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC849F465CE7867C954BAA92 /* WindowThemeController.swift */; };
 /* End PBXBuildFile section */
 
@@ -19,7 +21,9 @@
 		79025BBC75455E386FFFF342 /* ClockWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockWindowController.swift; sourceTree = "<group>"; };
 		C9088F62FC594AB050ED90F9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		DB4732D12161EDA8B63F474D /* FloatingClockMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FloatingClockMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC555F8E9F860ADF0F85B2B3 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = SOURCE_ROOT; };
 		EC849F465CE7867C954BAA92 /* WindowThemeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowThemeController.swift; sourceTree = "<group>"; };
+		F3667F5341B835F180ADC37F /* LaunchAtLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginController.swift; sourceTree = "<group>"; };
 		F753FC08314FA562D628940B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,6 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				D33487147777ACAE51559C34 /* Sources */,
+				EC555F8E9F860ADF0F85B2B3 /* Resources */,
 				69D0B38113EEAF864A7DE9EA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +51,7 @@
 				F753FC08314FA562D628940B /* AppDelegate.swift */,
 				2AAE2BB88042775FAEEC1924 /* ClockView.swift */,
 				79025BBC75455E386FFFF342 /* ClockWindowController.swift */,
+				F3667F5341B835F180ADC37F /* LaunchAtLoginController.swift */,
 				C9088F62FC594AB050ED90F9 /* main.swift */,
 				EC849F465CE7867C954BAA92 /* WindowThemeController.swift */,
 			);
@@ -68,6 +74,7 @@
 			buildConfigurationList = 704CD279180D13DB75851E8B /* Build configuration list for PBXNativeTarget "FloatingClockMac" */;
 			buildPhases = (
 				5CB32178DCA643ADFCC0562A /* Sources */,
+				3A7B2E4BEB5AECC79AE2027C /* Resources */,
 			);
 			buildRules = (
 			);
@@ -110,6 +117,17 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		3A7B2E4BEB5AECC79AE2027C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C7A7BB6C5F771559326ED62 /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5CB32178DCA643ADFCC0562A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -118,6 +136,7 @@
 				21E5E4356FE80839F84DCE80 /* AppDelegate.swift in Sources */,
 				16CAEEBC6C109D820A5C8ED2 /* ClockView.swift in Sources */,
 				229D3E913398E725BCDAAED5 /* ClockWindowController.swift in Sources */,
+				86304EF63390E79FBE097071 /* LaunchAtLoginController.swift in Sources */,
 				DDA7238688E691BB655E18A8 /* WindowThemeController.swift in Sources */,
 				75AF7D162B134C4938EBB079 /* main.swift in Sources */,
 			);
@@ -164,6 +183,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -227,6 +247,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

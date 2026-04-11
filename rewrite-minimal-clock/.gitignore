@@ -1,6 +1,7 @@
 .build/
 .xcode-derived/
 .DS_Store
+release/
 node_modules/
 dist/
 build/

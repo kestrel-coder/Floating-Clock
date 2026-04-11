@@ -11,6 +11,7 @@ settings:
     PRODUCT_BUNDLE_IDENTIFIER: com.kestrelcoder.FloatingClockMac
     PRODUCT_NAME: FloatingClockMac
     MACOSX_DEPLOYMENT_TARGET: 13.0
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     GENERATE_INFOPLIST_FILE: YES
     INFOPLIST_KEY_CFBundleDisplayName: FloatingClockMac
     INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.productivity
@@ -25,6 +26,8 @@ targets:
     deploymentTarget: "13.0"
     sources:
       - path: Sources/FloatingClockApp
+      - path: Resources
+        type: folder
     settings:
       base:
         PRODUCT_MODULE_NAME: FloatingClockMac
