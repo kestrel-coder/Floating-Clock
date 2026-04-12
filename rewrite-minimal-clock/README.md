@@ -17,6 +17,7 @@ FloatingClockMac is a lightweight native macOS floating clock built for full-scr
 It is designed to stay visible without feeling intrusive:
 
 - Native macOS app built with `Swift`, `AppKit`, and `SwiftUI`
+- Works on Apple Silicon and Intel Macs running macOS 13 Ventura or later
 - Always on top
 - Visible across Spaces and in full-screen apps
 - Menu bar utility with a quick-access status icon
