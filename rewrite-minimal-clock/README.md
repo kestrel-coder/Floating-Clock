@@ -1,4 +1,10 @@
-![FloatingClockMac logo](./FloatingClockMac-logo.png)
+<p align="center">
+  <a href="https://github.com/kestrel-coder/FloatingClockMac/raw/main/README-assets/FloatingClockMac-demo.mov">Watch the demo video</a>
+</p>
+
+<p align="center">
+  <video src="https://github.com/kestrel-coder/FloatingClockMac/raw/main/README-assets/FloatingClockMac-demo.mov" controls muted playsinline width="100%"></video>
+</p>
 
 # FloatingClockMac
 
