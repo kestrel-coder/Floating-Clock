@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://github.com/kestrel-coder/FloatingClockMac/raw/main/README-assets/FloatingClockMac-demo.mov">Watch the demo video</a>
+  <a href="https://github.com/kestrel-coder/FloatingClockMac/raw/main/README-assets/FloatingClockMac-demo.mp4">Watch the demo video</a>
 </p>
 
 <p align="center">
-  <video src="https://github.com/kestrel-coder/FloatingClockMac/raw/main/README-assets/FloatingClockMac-demo.mov" controls muted playsinline width="100%"></video>
+  <video src="https://github.com/kestrel-coder/FloatingClockMac/raw/main/README-assets/FloatingClockMac-demo.mp4" controls muted playsinline width="100%"></video>
 </p>
 
 # FloatingClockMac
