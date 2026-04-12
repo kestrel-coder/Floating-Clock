@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="./README-assets/FloatingClockMac-hero.png" alt="FloatingClockMac hero image" width="100%">
+</p>
+
+<p align="center">
   <a href="https://github.com/kestrel-coder/FloatingClockMac/raw/main/README-assets/FloatingClockMac-demo.mp4">Watch the demo video</a>
 </p>
 
